@@ -67,7 +67,7 @@ $(document).ready(function(){
       },
       error: function(result) {
         if (result.status == 404) {
-          alert("POST '/api/employees' endpoint not implemented or an error occurred.");
+          alert("POST '/api/employees' endpoint not implemented or an error occurred." + " Response text: " + result.responseText);
         }
         else
         {
