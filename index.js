@@ -160,12 +160,11 @@ app.delete("/api/employees/:id", function(req, res) {
 
 app.post("/api/employees", function(req, res) {
   let newEmployee = req.body;
-  //alert(newEmployee.name);
-  employeeDatabase.addEmployee(newEmployee);
 
    if (newEmployee.name ==="" || newEmployee.email ==="") {
       res.status(404).send("Empty name or email");
    } else {
+     employeeDatabase.addEmployee(newEmployee);
       res.status(200).send(newEmployee);
    }
 });
